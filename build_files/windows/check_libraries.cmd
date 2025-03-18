@@ -14,7 +14,7 @@ if NOT EXIST "%BUILD_VS_LIBDIR%\.git" (
 		echo The required external libraries in %BUILD_VS_LIBDIR% are missing
 		echo.
 		set /p GetLibs= "Would you like to download them? (y/n)"
-		if /I "!GetLibs!"=="Y" (
+		
 			echo.
 			echo Downloading %BUILD_VS_LIBDIR% libraries, please wait.
 			echo.
@@ -45,10 +45,7 @@ if NOT EXIST "%BUILD_VS_LIBDIR%\.git" (
 				echo.
 				exit /b 1
 			)
-		) else (
-           echo Not downloading libraries, until this is resolved you CANNOT make a successful blender build.
-           exit /b 1
-        )
+		
 	)
 ) else (
 	if NOT EXIST %PYTHON% (
