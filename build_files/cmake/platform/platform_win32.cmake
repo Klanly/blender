@@ -805,19 +805,7 @@ if(WITH_OPENCOLORIO)
   endif()
 endif()
 
-if(WITH_OPENVDB)
-  windows_find_package(OpenVDB)
-  if(NOT OpenVDB_FOUND)
-    set(OPENVDB ${LIBDIR}/openVDB)
-    set(OPENVDB_LIBPATH ${OPENVDB}/lib)
-    set(OPENVDB_INCLUDE_DIRS ${OPENVDB}/include)
-    set(OPENVDB_LIBRARIES
-      optimized ${OPENVDB_LIBPATH}/openvdb.lib
-      debug ${OPENVDB_LIBPATH}/openvdb_d.lib
-    )
-  endif()
-  set(OPENVDB_DEFINITIONS -DNOMINMAX -D_USE_MATH_DEFINES)
-endif()
+set(WITH_OPENVDB             OFF CACHE BOOL "" FORCE)
 
 if(WITH_NANOVDB)
   set(NANOVDB ${LIBDIR}/openvdb)
