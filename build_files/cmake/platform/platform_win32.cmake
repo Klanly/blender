@@ -806,8 +806,7 @@ if(WITH_OPENCOLORIO)
 endif()
 
 set(WITH_OPENVDB             OFF CACHE BOOL "" FORCE)
-add_definitions(-D_USE_MATH_DEFINES)
-add_definitions(-DNOMINMAX)
+set(OPENVDB_DEFINITIONS -DNOMINMAX -D_USE_MATH_DEFINES)
 
 if(WITH_NANOVDB)
   set(NANOVDB ${LIBDIR}/openvdb)
